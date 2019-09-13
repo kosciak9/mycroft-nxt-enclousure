@@ -12,9 +12,20 @@ get object detection working, recognize person and then use it in next steps.
 
 calculate object offset to rotate camera using NXT motors
 
+![NXT robot used for object tracking](./robot_photo.jpg)
+
+issues:
+
+- low range, can't rotate 360 (not even 90 I believe) on X axis. Around 180 degrees on Y axis.
+- focused on looks instead of usability (Thanks Ola!) but, we're studying Social Informatics not Automation and Robotics so that's kinda fine I guess
+
+it somewhat works:
+
+[YouTube Video with demonstration](https://youtu.be/wuYpBmQ6b2w)
+
 ## Third step:
 
-connect to Mycroft Voice Assistant API
+connect to Mycroft Voice Assistant API - message bus?
 
 ### Sources used:
 - https://towardsdatascience.com/detecting-faces-with-python-and-opencv-face-detection-neural-network-f72890ae531c
