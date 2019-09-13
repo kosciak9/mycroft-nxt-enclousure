@@ -3,6 +3,7 @@ import time
 import cv2
 from imutils.video import VideoStream
 import imutils
+import nxt
 
 import logging
 import chromalog
@@ -10,6 +11,14 @@ from chromalog.mark.helpers.simple import success
 
 chromalog.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger()
+
+logger.debug("connecting to NXT brick...")
+brick = nxt.locator.find_one_brick(debug=True)
+
+# motors for rotating
+logger.debug("setting up motors")
+vertical = nxt.motor.Motor(brick, nxt.PORT_A)
+horizontal = nxt.motor.Motor(brick, nxt.PORT_B)
 
 logger.debug("loading model")
 # model used was made by generous folks over at pyimagesearch.com. thanks so much!
@@ -72,6 +81,16 @@ while True:
                 else:
                     # rotate here
                     logger.debug("adjusting position...")
+                    speed = 40
+                    if offsetY > 0:
+                        vertical.turn(-speed, abs(offsetY))
+                    else:
+                        vertical.turn(speed, abs(offsetY))
+
+                    if offsetX > 0:
+                        horizontal.turn(-speed, abs(offsetX))
+                    else:
+                        horizontal.turn(speed, abs(offsetX))
 
 
 cv2.destroyAllWindows()

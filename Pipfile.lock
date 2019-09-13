@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e972f4cd9620e27f2185a72f9d037064d03ecdc83e46e6929bb3d9fc875b4734"
+            "sha256": "14eb51028ded222f90d74ce421925d1b53bb2edfdc38fc4575d434d2c75b2b17"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -65,6 +65,10 @@
             "index": "pypi",
             "version": "==1.17.2"
         },
+        "nxt-python": {
+            "git": "https://github.com/Eelviny/nxt-python",
+            "ref": "b29a700bbaf974e2acfefe52c0fc6dc9fd084210"
+        },
         "opencv-python": {
             "hashes": [
                 "sha256:01505b131dc35f60e99a5da98b77156e37f872ae0ff5596e5e68d526bb572d3c",
@@ -97,6 +101,16 @@
             ],
             "index": "pypi",
             "version": "==4.1.1.26"
+        },
+        "pybluez": {
+            "hashes": [
+                "sha256:15f7deeedf1e1ef06be88a457e8cd69c61e6a621914b082f64644e20a58f8589",
+                "sha256:4ce006716a54d9d18e8186a3f1c8b12a8e6befecffe8fd5828a291fb694ce49d",
+                "sha256:5e2d602894c82291f677c6a8b1bd06fa140f0eaff7e9c4537537faa73df017f0",
+                "sha256:75009604b0923aec14e8dfa544e5713cb983fbfaa4af1646ae66234901de3979"
+            ],
+            "index": "pypi",
+            "version": "==0.22"
         },
         "six": {
             "hashes": [
