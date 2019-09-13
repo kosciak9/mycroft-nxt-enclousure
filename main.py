@@ -70,7 +70,11 @@ while True:
                 (startX, startY, endX, endY) = box.astype("int")
 
                 middleX = endX - (endX - startX) / 2
-                middleY = endY - (endY - startY) / 2
+                middleY = (
+                    # endY - (endY - startY)
+                    startY
+                    + (endY - startY) / 4
+                )  # we want to focus face, not stomach
 
                 offsetX = w / 2 - middleX
                 offsetY = h / 2 - middleY
@@ -82,15 +86,19 @@ while True:
                     # rotate here
                     logger.debug("adjusting position...")
                     speed = 40
-                    if offsetY > 0:
-                        vertical.turn(-speed, abs(offsetY))
-                    else:
-                        vertical.turn(speed, abs(offsetY))
+                    try:
+                        if offsetY > 0:
+                            vertical.turn(-speed, abs(offsetY))
+                        else:
+                            vertical.turn(speed, abs(offsetY))
 
-                    if offsetX > 0:
-                        horizontal.turn(-speed, abs(offsetX))
-                    else:
-                        horizontal.turn(speed, abs(offsetX))
+                        if offsetX > 0:
+                            horizontal.turn(-speed, abs(offsetX))
+                        else:
+                            horizontal.turn(speed, abs(offsetX))
+                    except:
+                        logger.error("there was an error rotatng motors!")
+                        logger.error("most likely they got blocked")
 
 
 cv2.destroyAllWindows()
