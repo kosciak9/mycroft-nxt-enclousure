@@ -4,8 +4,9 @@
 
 get object detection working, recognize person and then use it in next steps.
 
-![./before.jpg](without object recognition)
-![./after.jpeg](with object recognition)
+![without object recognition](./before.jpg)
+
+![with object recognition](./after.jpeg)
 
 ## Second step:
 
